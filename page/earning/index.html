@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Earning</title>
+    <link rel="stylesheet" href="../../style/page/style.css">
+    <link rel="stylesheet" href="../../style/earning/style.css">
+</head>
+<body page="earning">
+    <nav class="menu elts ">
+        <img class="logo_img" src="../../images/menu/black.png" alt="">
+        <ul class="box_menu elts">
+            <span id="title_box">Dashboard</span>
+            <li class="icon_menu elts " onclick="change_page('home')">
+                <ion-icon id="icon" name="home-outline"></ion-icon>
+                <span>Home</span>
+            </li>
+            <li class="icon_menu elts mark_page" onclick="change_page('earning')">
+                <ion-icon id="icon" name="server"></ion-icon>
+                <span>Earning</span>
+            </li>
+            <li class="icon_menu elts" onclick="change_page('wallet')">
+                <ion-icon id="icon" name="wallet-outline"></ion-icon>
+                <span>Wallet</span>
+            </li>
+
+        </ul>
+
+        <ul class="box_menu elts">
+            <span id="title_box">Money</span>
+            <li class="icon_menu elts" onclick="change_page('budget')">
+                <ion-icon id="icon" name="pie-chart-outline"></ion-icon>
+                <span>Budget</span>
+            </li>
+            <li class="icon_menu elts" onclick="change_page('purchase')">
+                <ion-icon id="icon" name="cart-outline"></ion-icon>
+                <span>Purchase</span>
+            </li>
+            <li class="icon_menu elts" onclick="change_page('actives')">
+                <ion-icon id="icon" name="layers-outline"></ion-icon>
+                <span>Actives</span>
+            </li>
+        </ul>
+
+        <ul class="box_menu elts">
+            <span id="title_box">Data</span>
+            <li class="icon_menu elts" onclick="change_page('create')">
+                <ion-icon id="icon" name="add-outline"></ion-icon>
+                <span>Create</span>
+            </li>
+            <li class="icon_menu elts" onclick="change_page('orders')">
+                <ion-icon id="icon" name="albums-outline"></ion-icon>
+                <span>Orders</span>
+            </li>
+            <li class="icon_menu elts" onclick="change_page('report')">
+                <ion-icon id="icon" name="bar-chart-outline"></ion-icon>
+                <span>Report</span>
+            </li>
+
+        </ul>
+
+        <ul class="box_menu elts" id="box_command">
+            <li class="icon_menu elts">
+                <ion-icon id="icon" name="log-out-outline"></ion-icon>
+                <span>Logout</span>
+            </li>
+            <img src="../../images/menu/icon.png" alt="">
+            
+
+        </ul>
+    </nav>
+
+    <main class="box_page elts" page="central">
+        <header class="header_menu elts">
+            <ul class="box_header elts">
+                <li class="header_pages central_header mark" onclick="change_tab('earning','central')">Central</li>  
+                <li class="header_pages analysis_header" onclick="change_tab('earning','analysis')">Analysis</li>  
+                <li class="header_pages simulation_header" onclick="change_tab('earning','simulation')">Simulation</li>  
+            </ul>
+            <div class="box_search elts">
+                <ion-icon id="icon_search" name="search-outline"></ion-icon>
+                <input type="search" placeholder="Search here ...">
+            </div>
+        
+            <ul class="box_header elts" onclick="mode_color()">
+                <li class="icon_header elts">
+                    <ion-icon name="contrast-outline"></ion-icon>
+                </li>
+                <li class="icon_header elts" onclick="active_menu()">
+                    <ion-icon name="menu-outline"></ion-icon>
+                </li>
+            </ul>
+        </header>
+
+        <section class="box_main earning_central elts show">
+            <div class="box_info elts">
+                <div class="info elts">
+                    <ion-icon id='icon_info' name="wallet-outline"></ion-icon> 
+                    <div class="text_info elts">
+                        <h3>Wallet</h3>
+                        <span>$ 40.000.000,65</span>
+                    </div>
+                    <div class="perc_info elts">
+                        <ion-icon name="arrow-up-outline"></ion-icon>
+                        <span>1,8%</span>
+                    </div>
+                </div>
+                <div class="info elts">
+                    <ion-icon id='icon_info' name="server-outline"></ion-icon> 
+                    <div class="text_info elts">
+                        <h3>Money</h3>
+                        <span>$ 40.000.000</span>
+                    </div>
+                    <div class="perc_info elts">
+                        <ion-icon name="arrow-up-outline"></ion-icon>
+                        <span>1,8%</span>
+                    </div>
+                </div>
+                <div class="info elts">
+                    <ion-icon id='icon_info' name="trending-up-outline"></ion-icon> 
+                    <div class="text_info elts">
+                        <h3>Input</h3>
+                        <span>$ 40.000.000</span>
+                    </div>
+                    <div class="perc_info elts">
+                        <ion-icon name="arrow-up-outline"></ion-icon>
+                        <span>1,8%</span>
+                    </div>
+                </div>
+                <div class="info elts">
+                    <ion-icon id='icon_info' name="trending-down-outline"></ion-icon> 
+                    <div class="text_info elts">
+                        <h3>Output</h3>
+                        <span>$ 40.000.000</span>
+                    </div>
+                    <div class="perc_info elts">
+                        <ion-icon name="arrow-down-outline"></ion-icon>
+                        <span>1,8%</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="box_earning elts">
+                <div class="graphic_earning elts">
+                    <h3>Proventos por ativo</h3>
+                    <canvas id="myChart_1"></canvas>
+                </div>
+                <div class="graphic_earning">
+                    <h3>Proventos por ativo</h3>
+                    <canvas class="" id="myChart_2"></canvas>
+                </div>
+            </div>
+
+            <div class="progress_earning elts">
+                <h3>Progress earning</h3>
+                <canvas id="myChart_progress"></canvas>
+            </div>
+        </section>
+
+        <section class="box_main earning_analysis elts ">
+            <header class="header_analysis elts">
+                <div class="year_analysis elts">
+                    <h3>Year</h3>
+                    <select class="elts" id="slct_analysis">
+                        <option value="2022">2022</option>
+                        <option value="2023">2023</option>
+                    </select>
+                </div>
+
+                <ul class="tips_analysis elts">
+                    <li class="opt_tips slt_alyss">Stock</li>
+                    <li class="opt_tips">FII</li>
+                </ul>
+            </header>
+            <div class="box_earning elts">
+                <div class="graphic_earning elts">
+                    <h3>Graphic tips earning</h3>
+                </div>
+
+                <div class="graphic_earning elts">
+                    <h3>Graphic sector</h3>
+                </div>
+            </div>
+
+            <div class="trending_analysis elts">
+                <div class="box_analysis elts">
+                    <div class="command_analysis elts">
+                        <ion-icon id="icon" name="chevron-back-outline"></ion-icon>
+                        <span>highest DY%</span>
+                        <ion-icon id="icon" name="chevron-forward-outline"></ion-icon>
+                    </div>
+                    <table class="table_analysis elts">
+
+                    </table>
+                </div>
+                <div class="graphic_radar elts">
+                    <span>Percentual</span>
+                    <canvas class="elts" id="myChart"></canvas>
+                </div>
+            </div>
+
+            <div class="graphic_segments elts">
+                <h3>Graphic segment</h3>
+                <canvas class="elts" id="myChart_segment"></canvas>
+            </div>
+        </section>
+
+        <section class="box_main earning_simulation elts">
+            <div class="box_earning elts">
+                <div class="info_simulation elts">
+                    <div class="mounth_simulation elts">
+                        <div class="mounth sa elts">jan</div>
+                        <div class="mounth elts">fev</div>
+                        <div class="mounth elts">mar</div>
+                        <div class="mounth elts">abr</div>
+                        <div class="mounth elts">mai</div>
+                        <div class="mounth elts">jun</div>
+                        <div class="mounth elts">jul</div>
+                        <div class="mounth elts">ago</div>
+                        <div class="mounth elts">set</div>
+                        <div class="mounth elts">out</div>
+                        <div class="mounth elts">nov</div>
+                        <div class="mounth elts">dez</div>
+
+                    </div>
+                    <div class="info elts">
+                        <ion-icon id="icon_sim" name="calendar-number-outline"></ion-icon>
+                        <div class="txt elts">
+                            <h2>Mounth</h2>
+                            <span>R$ 20.000,45</span>
+                        </div>
+                        <div class="perc_simulation elts">
+                            <ion-icon name="arrow-up-outline"></ion-icon>
+                            <span>1,8%</span>
+                        </div>
+                    </div>
+                    <div class="info elts">
+                        <ion-icon id="icon_sim" name="calendar-outline"></ion-icon>
+                        <div class="txt elts">
+                            <h2>Mounth</h2>
+                            <span>R$ 20.000,45</span>
+                        </div>
+                        <div class="perc_simulation elts">
+                            <ion-icon name="arrow-up-outline"></ion-icon>
+                            <span>1,8%</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="graphic_earning elts">
+                    <h3>Provavel Proventos </h3>
+
+                </div>
+            </div>
+
+            <div class="camp_simulation elts"></div>
+
+            <div class="graphic_simulation elts"></div>
+        </section>
+    </main>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../../app/data/graphic.js"></script>
+    <script src="../../app/action/change.js"></script>
+    <script src="../../app/action/start.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <script>
+            const a = document.getElementById('myChart_progress');
+            let graphic_progress = new Chart(a, {
+                type: 'bar',
+                data: {
+                    labels: ['jan', 'fev', 'mar', 'abr', 'mai', 'jun','jul','ago','set','out','nov','dez'],
+                    datasets: [{
+                        label: '$ ',
+                        backgroundColor: '#2196f3',
+                        borderColor:'#2196f3',
+                        data: [12, 19, 3, 5, 2, 3,8,10,6,12,11,18],
+                        borderWidth: 2,
+                        tension: 0.5,
+                        pointBorderWidth:false,
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        x: {
+                            ticks: {
+                                color: "#2196f3"
+                            },
+                            grid: {
+                                display: false,
+                            },
+                        },
+                    y: {
+                        display:false,
+                        drawBorder: false,
+                            beginAtZero: true ,
+                            grid: {
+                                display: false,
+                            },
+                        },
+                        
+                    },
+                    plugins: {
+                        legend: {
+                            display: false, 
+                        },  
+                    }
+                }
+            });
+    
+            const ctx = document.getElementById('myChart');
+
+            let ya = new Chart(ctx, {
+                type: 'radar',
+                data: {
+                    labels: [
+                        'KLBN3',
+                        'KLBN4',
+                        'CSAN3',
+                        'GOAU4',
+                        'TAEE4',
+                    ],
+                    datasets: [{
+                    label: 'My First Dataset',
+                    data: [6, 5, 3, 8, 10],
+                    fill: true,
+                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                    borderColor: 'rgb(255, 99, 132)',
+                    pointBackgroundColor: 'rgb(255, 99, 132)',
+                    pointBorderColor: '#fff',
+                    pointHoverBackgroundColor: '#fff',
+                    pointHoverBorderColor: 'rgb(255, 99, 132)'
+                    }]
+                },
+                options: {
+                    elements: {
+                    line: {
+                        borderWidth: 3
+                    }
+                    },
+                    plugins: {
+                        legend: {
+                            display: false, 
+                        },  
+                    }
+                },
+                })
+
+
+                const segment = document.getElementById('myChart_segment');
+                let gpseg = new Chart(segment, {
+                    type: 'line',
+                    data: {
+                        labels: ['Motores e comp.', 'Celulose', 'Siderlurgica', 'Combustivel e Biocomb.', 'Transmição', 'jun','jul','ago','set','out','nov','dez'],
+                        datasets: [{
+                            label: '$ ',
+                            backgroundColor: '#2196f3',
+                            borderColor:'#2196f3',
+                            data: [12, 19, 3, 5, 2, 3,8,10,6,12,11,18],
+                            borderWidth: 2,
+                            tension: 0.5,
+                            pointBorderWidth:false,
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        scales: {
+                            x: {
+                                ticks: {
+                                    color: "#2196f3"
+                                },
+                                grid: {
+                                    display: false,
+                                },
+                            },
+                        y: {
+                            display:false,
+                            drawBorder: false,
+                                beginAtZero: true ,
+                                grid: {
+                                    display: false,
+                                },
+                            },
+                            
+                        },
+                        plugins: {
+                            legend: {
+                                display: false, 
+                            },  
+                        }
+                    }
+                });
+    
+    </script>
+
+
+
+</body>
+</html>

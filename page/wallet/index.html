@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wallet</title>
+    <link rel="stylesheet" href="../../style/page/style.css">
+    <link rel="stylesheet" href="../../style/wallet/style.css">
+</head>
+<body page="wallet">
+    <nav class="menu elts ">
+        <img class="logo_img" src="../../images/menu/black.png" alt="">
+        <ul class="box_menu elts">
+            <span id="title_box">Dashboard</span>
+            <li class="icon_menu elts " onclick="change_page('home')">
+                <ion-icon id="icon" name="home-outline"></ion-icon>
+                <span>Home</span>
+            </li>
+            <li class="icon_menu elts " onclick="change_page('earning')">
+                <ion-icon id="icon" name="server-outline"></ion-icon>
+                <span>Earning</span>
+            </li>
+            <li class="icon_menu elts mark_page" onclick="change_page('wallet')">
+                <ion-icon id="icon" name="wallet"></ion-icon>
+                <span>Wallet</span>
+            </li>
+
+        </ul>
+
+        <ul class="box_menu elts">
+            <span id="title_box">Money</span>
+            <li class="icon_menu elts" onclick="change_page('budget')">
+                <ion-icon id="icon" name="pie-chart-outline"></ion-icon>
+                <span>Budget</span>
+            </li>
+            <li class="icon_menu elts" onclick="change_page('purchase')">
+                <ion-icon id="icon" name="cart-outline"></ion-icon>
+                <span>Purchase</span>
+            </li>
+            <li class="icon_menu elts" onclick="change_page('actives')">
+                <ion-icon id="icon" name="layers-outline"></ion-icon>
+                <span>Actives</span>
+            </li>
+        </ul>
+
+        <ul class="box_menu elts">
+            <span id="title_box">Data</span>
+            <li class="icon_menu elts" onclick="change_page('create')">
+                <ion-icon id="icon" name="add-outline"></ion-icon>
+                <span>Create</span>
+            </li>
+            <li class="icon_menu elts" onclick="change_page('orders')">
+                <ion-icon id="icon" name="albums-outline"></ion-icon>
+                <span>Orders</span>
+            </li>
+            <li class="icon_menu elts" onclick="change_page('report')">
+                <ion-icon id="icon" name="bar-chart-outline"></ion-icon>
+                <span>Report</span>
+            </li>
+
+        </ul>
+
+        <ul class="box_menu elts" id="box_command">
+            <li class="icon_menu elts">
+                <ion-icon id="icon" name="log-out-outline"></ion-icon>
+                <span>Logout</span>
+            </li>
+            <img src="../../images/menu/icon.png" alt="">
+            
+
+        </ul>
+    </nav>
+
+    <main class="box_page elts" page="main">
+        <header class="header_menu elts">
+            <ul class="box_header elts">
+                <li class="header_pages main_header mark" onclick="change_tab('wallet','main')">Main</li>  
+                <li class="header_pages analysis_header" onclick="change_tab('wallet','analysis')">Analysis</li> 
+                <li class="header_pages graphic_header" onclick="change_tab('wallet','graphic')">Graphic</li>  
+            </ul>
+
+            <div class="box_search elts">
+                <ion-icon id="icon_search" name="search-outline"></ion-icon>
+                <input type="search" placeholder="Search here ...">
+            </div>
+        
+            <ul class="box_header elts">
+                <li class="icon_header elts" onclick="change_colors()">
+                    <ion-icon name="contrast-outline"></ion-icon>
+                </li>
+
+                <li class="icon_header elts" onclick="active_menu()">
+                    <ion-icon name="menu-outline"></ion-icon>
+                </li>
+            </ul>
+        </header>
+
+        <section class="box_main elts show wallet_main">
+            <div class="box_info_wallet elts">
+                <div class="info_wallet elts">
+                    <h4>Total wallet</h4>
+                    <h3 id="total_wallet">$0</h3>
+                    <div class="perc_wallet elts" id="perc_wallet_total">
+                        <ion-icon id="icon_wallet_total" name="arrow-up-outline"></ion-icon>
+                        <span id="num_wallet_total">0%</span>
+                    </div>
+                </div>
+
+                <div class="values_wallet elts">
+                    <div class="info_wallet elts">
+                        <h4>Total appreciation</h4>
+                        <h3  id="total_appreciation">$0</h3>
+                        <div class="perc_wallet elts" id="perc_wallet_appreciation">
+                            <ion-icon id="icon_wallet_appreciation" name="arrow-up-outline"></ion-icon>
+                            <span id="num_wallet_appreciation">0%</span>
+                        </div>
+                    </div>
+
+                    <div class="info_wallet elts">
+                        <h4>Total earning</h4>
+                        <h3 id="total_earning">$0</h3>
+                        <div class="perc_wallet elts"  id="perc_wallet_earning">
+                            <ion-icon id="icon_wallet_earning" name="arrow-up-outline"></ion-icon>
+                            <span id="num_wallet_earning">0%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="btn_info elts">
+                    <ion-icon name="ellipsis-vertical-outline"></ion-icon>
+                </div>
+            </div>
+
+            <div class="actives_graphic_wallet elts">
+                <canvas class="" id="myChart_actives"></canvas>
+            </div>
+
+
+            <div class="evolution_graphic_wallet elts">
+                <h3>Evolution wallet</h3>
+                <canvas class="" id="myChart_evolution"></canvas>
+            </div>
+
+            
+        </section>
+
+        <section class="box_main elts wallet_analysis">
+            <header class="header_filter_wallet elts">
+                <div class="filter_analysis elts">
+                    <span>Tips:</span>
+                    <select id="slct_tips_wallet_analysis" onchange="change_select('wallet_analysis','tips')">   </select>
+                </div>
+
+                <div class="filter_analysis elts">
+                    <span>Objtive:</span>
+                    <select id="slct_objtive_wallet_analysis" onchange=""></select>
+                </div>
+
+                <div class="filter_analysis elts">
+                    <span>Sector:</span>
+                    <select id="slct_sector_wallet_analysis" onchange="change_select('wallet_analysis','sector')"></select>
+                </div>
+
+                <div class="filter_analysis sequence_filter elts" onclick="sequence_filter('bigger')">
+                    <ion-icon name="arrow-up-outline"></ion-icon>
+                    <span>Sort</span>
+                </div>
+
+            </header>
+
+            <section class="table_wallet elts">
+
+            </section>
+            
+            <section class="beeth_market elts">
+
+            </section>
+        </section>
+
+        <section class="box_main elts wallet_graphic">
+
+        </section>
+
+    </main>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../../app/data/search.js"></script>
+    <script src="../../app/action/change.js"></script>
+    <script src="../../app/data/value.js"></script>
+    <script src="../../app/data/graphic.js"></script>
+    <script src="../../app/data/push.js"></script>
+    <script src="../../app/action/wallet.js"></script>
+    <script src="../../app/action/start.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+   
+</body>
+</html>

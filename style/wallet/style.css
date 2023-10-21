@@ -1,0 +1,98 @@
+.wallet_main .box_info_wallet{
+    width: 100%;
+    height: 180px;
+    background: var(--color-elements);
+    padding: 20px;
+    position: relative;
+}
+.box_info_wallet .values_wallet{
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+}
+.info_wallet h4{
+    font-family: "Open Sans";
+    font-weight: 300;
+    color: #848484;
+    letter-spacing: 1px;
+    word-spacing: 2px;
+    text-shadow: 1px 1px 1px var(--color-table);
+}
+
+.info_wallet h3{
+    font-family: "Open Sans";
+    font-weight: 400;
+    color: var(--color-text);
+    letter-spacing: 1px;
+}
+
+.box_info_wallet .perc_wallet{
+    flex-direction: row;
+    gap: 5px;
+    font-size: 15px;
+    color: green;
+}
+.perc_wallet span{
+    font-size: 13px;
+}
+
+.box_info_wallet .btn_info{
+    position: absolute;
+    padding: 10px;
+    font-size: 17px;
+    color: var(--color-text);
+    right: 10px;
+    top: 10px;
+}
+.wallet_main h3{
+    color: var(--color-text);
+    font-family: "Poppins";
+    font-weight: 300;
+}
+.wallet_main .actives_graphic_wallet,
+.wallet_main .evolution_graphic_wallet{
+    background: var(--color-elements);
+    width: 100%;
+    padding: 15px 20px;
+    border-radius: 20px;
+}
+
+.wallet_main .actives_graphic_wallet{
+    height: 700px;
+    overflow: hidden;
+    padding: 5px;
+}
+
+.wallet_analysis .header_filter_wallet{
+    flex-direction: row;
+    justify-content: space-around;
+    height: 60px;
+    width: 100%;
+    background: var(--color-elements);
+}
+
+.header_filter_wallet .filter_analysis{
+    flex-direction: row;
+    gap: 10px;
+    color: var(--color-text);
+}
+
+.header_filter_wallet .sequence_filter{
+    padding: 6px  10px;
+    border-radius: 5px;
+    pointer-events: none;
+}
+
+.filter_analysis select{
+    background: var(--color-elements);
+    border: 1px solid var(--color-elements);
+    color: var(--color-text);
+    outline: none;
+    font-size: 17px;
+    width: 190px;
+
+}
+
+.filter_analysis select#slct_tips_wallet_analysis{
+    width: 160px;
+}

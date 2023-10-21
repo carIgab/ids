@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create</title>
+    <link rel="stylesheet" href="../../style/page/style.css">
+    <link rel="stylesheet" href="../../style/form/style.css">
+    <link rel="stylesheet" href="../../style/create/style.css">
+</head>
+<body page="create">
+    <nav class="menu elts ">
+        <img class="logo_img" src="../../images/menu/black.png" alt="">
+        <ul class="box_menu elts">
+            <span id="title_box">Dashboard</span>
+            <li class="icon_menu elts " onclick="change_page('home')">
+                <ion-icon id="icon" name="home-outline"></ion-icon>
+                <span>Home</span>
+            </li>
+            <li class="icon_menu elts " onclick="change_page('earning')">
+                <ion-icon id="icon" name="server-outline"></ion-icon>
+                <span>Earning</span>
+            </li>
+            <li class="icon_menu elts " onclick="change_page('wallet')">
+                <ion-icon id="icon" name="wallet-outline"></ion-icon>
+                <span>Wallet</span>
+            </li>
+
+        </ul>
+
+        <ul class="box_menu elts">
+            <span id="title_box">Money</span>
+            <li class="icon_menu elts" onclick="change_page('budget')">
+                <ion-icon id="icon" name="pie-chart-outline"></ion-icon>
+                <span>Budget</span>
+            </li>
+            <li class="icon_menu elts " onclick="change_page('purchase')">
+                <ion-icon id="icon" name="cart-outline"></ion-icon>
+                <span>Purchase</span>
+            </li>
+            <li class="icon_menu elts " onclick="change_page('actives')">
+                <ion-icon id="icon" name="layers-outline"></ion-icon>
+                <span>Actives</span>
+            </li>
+        </ul>
+
+        <ul class="box_menu elts">
+            <span id="title_box">Data</span>
+            <li class="icon_menu elts mark_page" onclick="change_page('create')">
+                <ion-icon id="icon" name="add"></ion-icon>
+                <span>Create</span>
+            </li>
+            <li class="icon_menu elts" onclick="change_page('orders')">
+                <ion-icon id="icon" name="albums-outline"></ion-icon>
+                <span>Orders</span>
+            </li>
+            <li class="icon_menu elts " onclick="change_page('report')">
+                <ion-icon id="icon" name="bar-chart-outline"></ion-icon>
+                <span>Report</span>
+            </li>
+
+        </ul>
+
+        <ul class="box_menu elts" id="box_command">
+            <li class="icon_menu elts">
+                <ion-icon id="icon" name="log-out-outline"></ion-icon>
+                <span>Logout</span>
+            </li>
+            <img src="../../images/menu/icon.png" alt="">
+            
+
+        </ul>
+    </nav>
+
+    <main class="box_page elts" page="base">
+        <header class="header_menu elts">
+                <ul class="box_header elts">
+                    <li class="header_pages base_header mark" onclick="change_tab('create','base')">Base</li>  
+                    <li class="header_pages flow_header" onclick="change_tab('create','flow')">Flow</li>  
+                    <li class="header_pages earning_header" onclick="change_tab('create','earning')">Earning</li>  
+                    <li class="header_pages record_header" onclick="change_tab('create','record')">Record</li>  
+                </ul>
+                <div class="box_search elts">
+                    <ion-icon id="icon_search" name="search-outline"></ion-icon>
+                    <input type="search" placeholder="Search here ...">
+                </div>
+            
+                <ul class="box_header elts">
+                    <li class="icon_header elts">
+                        <ion-icon name="contrast-outline"></ion-icon>
+                    </li>
+                    <li class="icon_header elts" onclick="active_menu()">
+                        <ion-icon name="menu-outline"></ion-icon>
+                    </li>
+                </ul>
+        </header>
+
+        <section class="box_main elts ">
+            <div class="box_create create_base elts show">
+                <header class="header_form elts">
+                    <div class="box_action_form elts">
+                        <li class="action_form base_data elts mark_create_base" onclick="change_action('base','data')">
+                            <ion-icon name="cloud-outline"></ion-icon>
+                        </li>
+                        <li class="action_form base_search elts" onclick="change_action('base','search')">
+                            <ion-icon name="search-outline"></ion-icon>
+                        </li>
+                        <li class="action_form base_modify off elts" onclick="change_action('base','modify')">
+                            <ion-icon name="build-outline"></ion-icon>
+                        </li>
+                        <li class="action_form base_delete off elts" onclick="change_action('base','delete')" >
+                            <ion-icon name="trash-outline"></ion-icon>
+                        </li>
+                        <li class="action_form base_clear  elts" onclick="reset_form('base')">
+                            <ion-icon name="color-wand-outline"></ion-icon>
+                        </li>
+                    </div>
+                    <li class="action_form base_action elts" onclick="action_create('base','register')">
+                        <ion-icon name="cloud-done-outline"></ion-icon>
+                    </li>
+                </header>
+
+                <form class="box_form base_form elts">
+                    <section class="camp_form elts">
+                        <h2>Company</h2>
+                        <div class="box_ipts elts">
+                            <input type="text" id="0_base" placeholder="Enter code" onchange="authenticating_code('base')">
+                            <select id="1_base">
+                                <option value="Stock">Stock</option>
+                                <option value="FII">FII</option>
+                                <option value="Public titles.">Public titles</option>
+                                <option value="Fixed income">Fixed income</option>
+                                <option value="BDR">BDR</option>
+                                <option value="Stock EUA">Stock EUA</option>
+                                <option value="Outside">Outside</option>
+                                <option value="Others">Others</option>
+                            </select>
+                            <input type="text" id="2_base" placeholder="Enter name">
+                        </div>
+                    </section>
+
+                    <section class="camp_form elts">
+                        <h2>Information</h2>
+                        <div class="box_ipts elts">
+                            <input type="text" id="3_base" placeholder="Enter CNPJ">
+                            <input type="text" id="4_base" placeholder="Enter review">
+                            <input type="text" id="5_base" placeholder="Enter rii">
+                        </div>
+                    </section>
+
+                    <section class="camp_form elts">
+                        <h2>Characheristc</h2>
+                        <div class="box_ipts elts">
+                            <select id="6_base">
+                                <option value="Dividend">Dividend</option>
+                                <option value="Growth">Growth</option>
+                                <option value="Crescidendos">Crescidendos</option>
+                                <option value="Valuation">Valuation</option>
+                                <option value="Opportunities">Opportunities</option>
+                                <option value="Bet">Bet</option>
+                            </select>
+                            <input type="text" id="7_base" placeholder="Enter sector">
+                            <input type="text" id="8_base" placeholder="Enter segment">
+                        </div>
+                    </section>      
+                    
+                </form>
+            </div>
+
+            <div class="box_create create_flow elts">
+                <header class="header_form elts">
+                    <div class="box_action_form elts">
+                        <li class="action_form flow_data elts mark_create_flow" onclick="change_action('flow','data')">
+                            <ion-icon name="cloud-outline"></ion-icon>
+                        </li>
+                        <li class="action_form flow_search elts" onclick="change_action('flow','search')">
+                            <ion-icon name="search-outline"></ion-icon>
+                        </li>
+                        <li class="action_form flow_modify off elts" onclick="change_action('flow','modify')">
+                            <ion-icon name="build-outline"></ion-icon>
+                        </li>
+                        <li class="action_form flow_delete off elts" onclick="change_action('flow','delete')" >
+                            <ion-icon name="trash-outline"></ion-icon>
+                        </li>
+                        <li class="action_form flow_clear  elts" onclick="reset_form('flow')">
+                            <ion-icon name="color-wand-outline"></ion-icon>
+                        </li>
+                    </div>
+                    <li class="action_form flow_action elts" onclick="action_create('flow','register')">
+                        <ion-icon name="cloud-done-outline"></ion-icon>
+                    </li>
+                </header>
+
+                <form class="box_form flow_form elts">
+                    <section class="camp_form elts">
+                        <h2>Information </h2>
+                        <div class="box_ipts elts">
+                            <input type="text" id="0_flow" placeholder="Enter code"  readonly>
+                            <input type="date" id="1_flow">
+                            <select id="2_flow" onchange="flow_action('tips_flow')">
+                                <option value="Input">Input</option>
+                                <option value="Output">Output</option>
+                               
+                            </select>
+                        </div>
+                    </section>
+
+                    <section class="camp_form elts">
+                        <h2>Flow</h2>
+                        <div class="box_ipts elts">
+                            <select id="3_flow" onchange="flow_action('area_flow')"></select>
+                            <select id="4_flow"></select>
+                            <input type="text" id="5_flow" placeholder="Enter source">
+                        </div>
+                    </section>
+
+                    <section class="camp_form elts">
+                        <h2>Characheristc</h2>
+                        <div class="box_ipts elts">
+                            <input type="text" id="6_flow" placeholder="Enter name">
+                            <select id="7_flow" ></select>
+                            <input type="text" id="8_flow" placeholder="Enter value">
+                        </div>
+                    </section>      
+                    
+                </form>
+            </div>
+
+            <div class="box_create create_earning elts">
+                <header class="header_form elts">
+                    <div class="box_action_form elts">
+                        <li class="action_form earning_data elts mark_create_earning" onclick="change_action('earning','data')">
+                            <ion-icon name="cloud-outline"></ion-icon>
+                        </li>
+                        <li class="action_form earning_search elts" onclick="change_action('earning','search')">
+                            <ion-icon name="search-outline"></ion-icon>
+                        </li>
+                        <li class="action_form earning_modify off elts" onclick="change_action('earning','modify')">
+                            <ion-icon name="build-outline"></ion-icon>
+                        </li>
+                        <li class="action_form earning_delete off elts" onclick="change_action('earning','delete')" >
+                            <ion-icon name="trash-outline"></ion-icon>
+                        </li>
+                        <li class="action_form earning_clear  elts" onclick="reset_form('earning')">
+                            <ion-icon name="color-wand-outline"></ion-icon>
+                        </li>
+                    </div>
+                    <li class="action_form earning_action elts" onclick="action_create('earning','register')">
+                        <ion-icon name="cloud-done-outline"></ion-icon>
+                    </li>
+                </header>
+
+                <form class="box_form earning_form elts">
+                    <section class="camp_form elts">
+                        <h2>Information</h2>
+                        <div class="box_ipts elts">
+                            <input type="text" id="0_earning"  readonly>
+                            <input type="date" id="1_earning">
+                            <select id="2_earning">
+                                <option value="Dividend">Dividend</option>
+                                <option value="JCP">JCP</option>
+                                <option value="Fees">Fees</option>
+                                <option value="Rent">Rent</option>
+                                <option value="Bonus">Bonus</option>
+                                <option value="Others">Others</option>
+                            </select>
+                        </div>
+                    </section>
+
+                    <section class="camp_form elts">
+                        <h2>Active</h2>
+                        <div class="box_ipts elts">
+                            <input type="text" id="3_earning" placeholder="Enter code" onchange="authenticating_code('earning')">
+                            <input type="text" id="4_earning" placeholder="Tips active" readonly>
+                            <input type="text" id="5_earning" placeholder="Total invest">
+                        </div>
+                    </section>
+
+                    <section class="camp_form elts">
+                        <h2>Characheristc</h2>
+                        <div class="box_ipts elts">
+                            <input type="number" id="6_earning" placeholder="Qtds" onchange="sum_form('earning')">
+                            <input type="text" id="7_earning" placeholder="Enter Value" onchange="sum_form('earning')">
+                            <input type="text" id="8_earning" placeholder="Total" readonly>
+                        </div>
+                    </section>      
+                    
+                </form>
+            </div>
+
+            <div class="box_create create_record elts">
+                <header class="header_form elts">
+                    <div class="box_action_form elts">
+                        <li class="action_form record_data elts mark_create_record" onclick="change_action('record','data')">
+                            <ion-icon name="cloud-outline"></ion-icon>
+                        </li>
+                        <li class="action_form record_search elts" onclick="change_action('record','search')">
+                            <ion-icon name="search-outline"></ion-icon>
+                        </li>
+                        <li class="action_form record_modify off elts" onclick="change_action('record','modify')">
+                            <ion-icon name="build-outline"></ion-icon>
+                        </li>
+                        <li class="action_form record_delete off elts" onclick="change_action('record','delete')" >
+                            <ion-icon name="trash-outline"></ion-icon>
+                        </li>
+                        <li class="action_form record_clear  elts" onclick="reset_form('record')">
+                            <ion-icon name="color-wand-outline"></ion-icon>
+                        </li>
+                    </div>
+                    <li class="action_form record_action elts" onclick="action_create('record','register')">
+                        <ion-icon name="cloud-done-outline"></ion-icon>
+                    </li>
+                </header>
+
+                <form class="box_form record_form elts">
+                    <section class="camp_form elts">
+                        <h2>Information</h2>
+                        <div class="box_ipts elts">
+                            <input type="text" id="0_record" readonly>
+                            <input type="text" id="1_record">
+                            <input type="date" id="2_record">
+                            
+                        </div>
+                    </section>
+
+                    <section class="camp_form elts">
+                        <h2>Actives</h2>
+                        <div class="box_ipts elts">
+                            <input type="text" id="3_record" placeholder="Enter code" onchange="authenticating_code('record')">
+                            <select id="4_record">
+                                <option value="Purchase">Purchase</option>
+                                <option value="Sale">Sale</option>
+                            </select>
+                            <input type="text" id="5_record" placeholder="Total">
+                        </div>
+                    </section>
+
+                    <section class="camp_form elts">
+                        <h2>Characheristc</h2>
+                        <div class="box_ipts elts">
+                            <input min="1" type="number" id="6_record" placeholder="Enter qtde" onchange="sum_form('record')">
+                            <input type="text" id="7_record" placeholder="Enter value" onchange="sum_form('record')">
+                            <input type="text" id="8_record" placeholder="Enter subtotal">
+                        </div>
+                    </section>      
+                    
+                </form>
+            </div>
+            
+        </section>
+    </main>
+
+    <script src="../../app/data/search.js"></script>
+    <script src="../../app/action/create.js"></script>
+    <script src="../../app/action/change.js"></script>
+    <script src="../../app/action/start.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

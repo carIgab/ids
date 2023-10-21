@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report</title>
+    <link rel="stylesheet" href="../../style/page/style.css">
+    <link rel="stylesheet" href="../../style/form/style.css">
+    <link rel="stylesheet" href="../../style/report/style.css">
+</head>
+<body page='report'>
+    <nav class="menu elts ">
+        <img class="logo_img" src="../../images/menu/black.png" alt="">
+        <ul class="box_menu elts">
+            <span id="title_box">Dashboard</span>
+            <li class="icon_menu elts " onclick="change_page('home')">
+                <ion-icon id="icon" name="home-outline"></ion-icon>
+                <span>Home</span>
+            </li>
+            <li class="icon_menu elts " onclick="change_page('earning')">
+                <ion-icon id="icon" name="server-outline"></ion-icon>
+                <span>Earning</span>
+            </li>
+            <li class="icon_menu elts " onclick="change_page('wallet')">
+                <ion-icon id="icon" name="wallet-outline"></ion-icon>
+                <span>Wallet</span>
+            </li>
+
+        </ul>
+
+        <ul class="box_menu elts">
+            <span id="title_box">Money</span>
+            <li class="icon_menu elts" onclick="change_page('budget')">
+                <ion-icon id="icon" name="pie-chart-outline"></ion-icon>
+                <span>Budget</span>
+            </li>
+            <li class="icon_menu elts " onclick="change_page('purchase')">
+                <ion-icon id="icon" name="cart-outline"></ion-icon>
+                <span>Purchase</span>
+            </li>
+            <li class="icon_menu elts " onclick="change_page('actives')">
+                <ion-icon id="icon" name="layers-outline"></ion-icon>
+                <span>Actives</span>
+            </li>
+        </ul>
+
+        <ul class="box_menu elts">
+            <span id="title_box">Data</span>
+            <li class="icon_menu elts" onclick="change_page('create')">
+                <ion-icon id="icon" name="add-outline"></ion-icon>
+                <span>Create</span>
+            </li>
+            <li class="icon_menu elts" onclick="change_page('orders')">
+                <ion-icon id="icon" name="albums-outline"></ion-icon>
+                <span>Orders</span>
+            </li>
+            <li class="icon_menu elts mark_page" onclick="change_page('report')">
+                <ion-icon id="icon" name="bar-chart"></ion-icon>
+                <span>Report</span>
+            </li>
+
+        </ul>
+
+        <ul class="box_menu elts" id="box_command">
+            <li class="icon_menu elts">
+                <ion-icon id="icon" name="log-out-outline"></ion-icon>
+                <span>Logout</span>
+            </li>
+            <img src="../../images/menu/icon.png" alt="">
+            
+
+        </ul>
+    </nav>
+
+    <main class="box_page elts" page="all_report">
+        <header class="header_menu elts">
+            <ul class="box_header elts">
+                <li class="header_pages all_report_header mark" onclick="change_tab('report','all_report')">All report</li>  
+                <li class="header_pages launch_header off" onclick="change_tab('report','launch')">Launch</li>  
+            </ul>
+
+            <div class="box_search elts">
+                <ion-icon id="icon_search" name="search-outline"></ion-icon>
+                <input type="search" placeholder="Search here ...">
+            </div>
+        
+            <ul class="box_header elts">
+                <li class="icon_header elts" onclick="change_colors()">
+                    <ion-icon name="contrast-outline"></ion-icon>
+                </li>
+
+                <li class="icon_header elts" onclick="active_menu()">
+                    <ion-icon name="menu-outline"></ion-icon>
+                </li>
+            </ul>
+        </header>
+        
+        <section class="box_main report_all_report elts show">
+            <header class="header_report elts">
+                <div class="info_list elts">
+                    <div class="box_search elts">
+                        <input type="search" id="ipt_search_report" placeholder="Search order ..." onkeyup="search_report('search')">
+                        <ion-icon id="icon_ipt_search" name="search-outline"></ion-icon>
+                    </div>
+
+                    <div class="box_action_filter elts" >
+                        <li class="btn_filter elts" onclick="clear_filter('report')">
+                            <ion-icon name="color-wand-outline"></ion-icon>
+                        </li>
+                        <li class="btn_filter elts" onclick="search_report('filter')">
+                            <ion-icon name="filter-outline"></ion-icon>
+                        </li>
+                    </div>
+                    
+                   
+                    
+
+                </div>
+                <form class="filter_list elts">
+                    <div class="box_cmd_list elts">
+                        <span>Value from</span>
+                        <input type="text" id="ipt_filter_value_1" >
+                        <span>to</span>
+                        <input type="text" id="ipt_filter_value_2" >
+
+                    </div>
+                    <div class="box_cmd_list elts">
+                        <span>Date from</span>
+                        <input type="date" id="ipt_filter_date_1">
+                        <span>to</span>
+                        <input type="date" id="ipt_filter_date_2">
+
+                    </div>
+                    
+                </form>
+              
+               
+            </header>
+
+            
+            <section class="body_report  elts">
+                
+            </section>
+        </section>
+
+        <section class="box_main report_launch elts " page="report">
+            <header class="header_form elts">
+                <div class="box_action_form elts">
+                    <li class="action_form report_data elts mark_create_report" onclick="change_action('report','data')">
+                        <ion-icon name="cloud-outline"></ion-icon>
+                    </li>
+                    <li class="action_form report_search elts" onclick="change_action('report','search')" >
+                        <ion-icon name="search-outline"></ion-icon>
+                    </li>
+                    <li class="action_form report_modify off elts" onclick="change_action('report','modify')">
+                        <ion-icon name="build-outline"></ion-icon>
+                    </li>
+                    <li class="action_form report_delete off elts" onclick="change_action('report','delete')" >
+                        <ion-icon name="trash-outline"></ion-icon>
+                    </li>
+                    <li class="action_form report_clear  elts" onclick="reset_form('report')">
+                        <ion-icon name="color-wand-outline"></ion-icon>
+                    </li>
+                </div>
+
+                <div class="index_form elts">
+                    <li class="idx_report elts" onclick="change_tab_report('back')">
+                        <ion-icon name="chevron-back-outline"></ion-icon>
+                    </li>
+                    <span id='index_report'>Page 1</span>
+                    <li class="idx_report elts" onclick="change_tab_report('front')">
+                        <ion-icon name="chevron-forward-outline"></ion-icon>
+                    </li>
+                </div>
+
+                <li class="action_form report_action elts" onclick="action_create('report', 'register')">
+                    <ion-icon name="cloud-done-outline"></ion-icon>
+                </li>
+            </header>
+
+            <form class="box_form report_form elts" >
+                <section class="tab_report tab_report_0 elts show_report">
+                    <section class="camp_form elts">
+                        <h3>Information</h3>
+                        <div class="box_ipts elts">
+                            <input type="text" id="0_report" readonly>
+                            <input type="date" id="1_report" >
+                            <input type="week" id="2_report" onchange="authenticating_week()">
+                        </div>
+                    </section>
+
+                    <section class="camp_form elts">
+                        <h3>Statics IBOV</h3>
+                        <div class="box_ipts elts">
+                            <input type="text" id="3_report" placeholder="Enter Actual">
+                            <input type="text" id="4_report" placeholder="Enter High">
+                            <input type="text" id="5_report" placeholder="Enter Low">
+                        </div>
+                    </section>
+
+                    <section class="camp_form elts">
+                        <h3>Statics IFIX</h3>
+                        <div class="box_ipts elts">
+                            <input type="text" id="6_report" placeholder="Enter Actual">
+                            <input type="text" id="7_report" placeholder="Enter High">
+                            <input type="text" id="8_report" placeholder="Enter Low">
+                        </div>
+                    </section>
+
+                    <section class="camp_form elts">
+                        <h3>Statics S&P500</h3>
+                        <div class="box_ipts elts">
+                            <input type="text" id="9_report" placeholder="Enter Actual">
+                            <input type="text" id="10_report" placeholder="Enter High">
+                            <input type="text" id="11_report" placeholder="Enter Low">
+                        </div>
+                    </section>
+
+                    <section class="camp_form elts">
+                        <h3>Statics Index</h3>
+                        <div class="box_ipts elts">
+                            <input type="text" id="12_report" placeholder="Enter Actual">
+                            <input type="text" id="13_report" placeholder="Enter High">
+                            <input type="text" id="14_report" placeholder="Enter Low">
+                        </div>
+                    </section>
+                </section>
+
+                
+                
+            </form>
+        </section>
+    </main>
+
+    
+    <script src="../../app/action/change.js"></script>
+    <script src="../../app/data/search.js"></script>
+    <script src="../../app/action/report.js"></script>
+    <script src="../../app/data/push.js"></script>
+    <script src="../../app/action/create.js"></script>
+    <script src="../../app/action/start.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
